@@ -1,8 +1,8 @@
-function Button({ label, iconURL, backgroundColor, textColor, borderColor }) {
+function Button({ label, iconURL, backgroundColor, textColor, borderColor, fullwidth }) {
   return (
     <button
       className={`flex justify-center items-center gap-2 px-7 py-4 border font-montserrat text-lg lending-none 
-      ${backgroundColor ? `${backgroundColor} ${textColor} ${borderColor}` : "bg-coral-red rounded-full text-white borfer-coral-red"} rounded-full "}`}
+      ${backgroundColor ? `${backgroundColor} ${textColor} ${borderColor}` : "bg-coral-red rounded-full text-white borfer-coral-red"} rounded-full ${fullwidth && 'w-full'} "}`}
       
     >
       {label}

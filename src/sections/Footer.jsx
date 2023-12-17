@@ -1,11 +1,56 @@
-
+import { copyrightSign } from "../assets/icons";
+import { footerLogo } from "../assets/images";
+import { footerLinks, socialMedia } from "../constants";
 
 function Footer() {
   return (
-    <div>
-      <h3>Footer</h3>
-    </div>
-  )
+    <footer className="max-container">
+      <div className="flex justify-between items-start gap-20 flex-wrap max-lg:flex-col">
+        <div className="flex flex-col ">
+          <a href="/">
+            <img src={footerLogo} alt="" width={150} height={46} />
+          </a>
+          <p className="mt-6 font-montserrat text-white-400 text-base leading-7 sm:max-w-sm">
+            Get shoes ready for the new term at your nearest Nike Store. Find
+            Your perfect Size In Store. Get Rewards
+          </p>
+          <div className="flex items-center gap-5 mt-8">
+            {socialMedia.map((icon) => (
+              <div
+                key={icon}
+                className="flex justify-center items-center bg-white rounded-full h-12 w-12"
+              >
+                <img src={icon.src} alt={icon.alt} width={24} height={24} />
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="flex flex-1 justify-between gap-20 lg:gap-10 flex-wrap">
+          {footerLinks.map((section) => (
+            <div key={section}>
+              <h4 className="font-monserrat leading-normal text-2xl text-white font-medium mb-6">
+                {section.title}
+              </h4>
+              <ul>
+                {section.links.map((link) => (
+                  <li key={link.name} className="mt-3 text-white-400 font-montserrat text-base leading-normal hover:text-slate-gray cursor-pointer">
+                    <a >{link.name}</a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </div>
+      <div className="flex justify-between mt-24 max-sm:flex-col text-white-400 mx-sm:items-center">
+                  <div className="flex flex-1 justify-start items-center font-montserrat gap-2 cursor-pointer">
+                  <img src={copyrightSign} alt="Copy write sign" height={20} width={20} className="rounded-full m-0" />
+                  <p>Copyright. All right reserved.</p>
+                  </div>
+                  <p className="font-monserrat cursor-pointer">Terms & Conditions</p>
+      </div>
+    </footer>
+  );
 }
 
-export default Footer
+export default Footer;

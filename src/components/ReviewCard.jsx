@@ -8,7 +8,7 @@ function ReviewCard({ imgURL, customerName, rating, feedback }) {
         alt="customers"
         className="rounded-full object-cover w-[120px] h-[120px]"
       />
-      <p className="mt-6 max-w-sm text-center info-text">{feedback}</p>
+      <p className="mt-6 max-w-sm text-center ">{feedback}</p>
       <div className="mt-6 flex justify-center items-center gap-2.5">
         <img
           src={star}
